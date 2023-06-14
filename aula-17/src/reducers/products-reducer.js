@@ -29,16 +29,16 @@ export default function ProductsReducer(state = State, action) {
   }
 
   if (action.type === "CLEAR_PRODUCTS") {
-    const removeProducts = [...state.products]; // Cria uma cópia do array de produtos
+    const removeProducts = [...state.products]; 
   
     const updatedProducts = removeProducts.filter(
       (product) => product !== action.payload.product
     );
-    // Filtra o array para remover o produto específico
+ 
   
     return {
       ...state,
-      products: updatedProducts, // Atualiza a lista de produtos com os produtos filtrados
+      products: updatedProducts, 
     };
   }
   
