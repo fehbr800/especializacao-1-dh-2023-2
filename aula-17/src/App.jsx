@@ -38,16 +38,20 @@ function App() {
         >
           Salvar
         </button>
-
         <button onClick={() => dispatch({ type: "CLEAR_LIST" })}>
           Limpar Lista
         </button>
-
         <ul>
           {products.map((product, idx) => (
             <li key={idx}>
               {JSON.stringify(product)}
-              <button>Remover</button>
+              <button
+                onClick={() =>
+                  dispatch({ type: "CLEAR_PRODUCTS", payload: { product } })
+                }
+              >
+                Remover
+              </button>
             </li>
           ))}
         </ul>
